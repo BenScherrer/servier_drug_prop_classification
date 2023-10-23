@@ -1,0 +1,38 @@
+# Compiled Python files
+*__pycache__/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files
+data/
+*.csv
+*.xlsx
+*.pkl
+
+# Model files
+src/models/
+*.h5
+*.pkl
+
+# Checkpoints and saved models
+checkpoints/
+saved_models/
+
+# Visualizations
+*.png
+*.jpg
+*.svg
+
+# IDE/Editor-specific files (e.g., Visual Studio Code)
+.vscode/
+*.pyc
+
+# Temporary files
+*.swp
+
+# Ignore local configuration files
+config.py
+
+# Ignore Python bytecode
+*.pyc
