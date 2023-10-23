@@ -39,13 +39,7 @@ Have been implemented :
 
 ### Usage as a Package
 
-Explain how to use your project as a package, including any code snippets or examples.
-
-```python
-import your_package_name
-
-# Example code for using the package
-```
+Not implemented yet.
 
 ### Usage via Flask API
 
@@ -67,13 +61,13 @@ Explain how to use Docker to run the project in a containerized environment.
 1. Build the Docker image:
 
    ```bash
-   docker build -t your_project_name .
+   docker build . -t servier
    ```
 
 2. Run the Docker container:
 
    ```bash
-   docker run -p 5000:5000 your_project_name
+   docker run -d -p 5000:5000 - v ./src/data:/app/src/data -v ./src/models:/app/src/models servier:latest
    ```
 
 

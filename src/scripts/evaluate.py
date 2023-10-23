@@ -1,4 +1,4 @@
-from src.scripts.predict import predict
+from scripts.predict import predict
 
 def evaluate(model, data, gt):
     

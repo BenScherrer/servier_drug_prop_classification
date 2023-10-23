@@ -1,6 +1,6 @@
 import pickle
 import numpy as np
-from src.scripts.preprocess import smiles_to_numpy, morganFP_to_numpy, one_hot_encoding
+from scripts.preprocess import smiles_to_numpy, morganFP_to_numpy, one_hot_encoding
 from rdkit import DataStructs
 import tensorflow as tf
 

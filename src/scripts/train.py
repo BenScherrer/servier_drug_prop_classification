@@ -10,10 +10,9 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import LSTM
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
-from sklearn.model_selection import GridSearchCV
 
 # Private packages
-from src.scripts.preprocess import preprocessing_feature, preprocessing_smiles
+from scripts.preprocess import preprocessing_feature, preprocessing_smiles
 
 
 def train(data_path, method):

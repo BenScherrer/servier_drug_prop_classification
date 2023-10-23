@@ -9,9 +9,9 @@ project_dir = os.path.dirname(current_dir)
 sys.path.append(project_dir)
 
 # Private modules
-from src.scripts.train import train
-from src.scripts.evaluate import predict
-from src.scripts.evaluate import evaluate
+from scripts.train import train
+from scripts.evaluate import predict
+from scripts.evaluate import evaluate
 
 app = Flask(__name__)
 
