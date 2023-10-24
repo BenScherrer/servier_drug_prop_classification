@@ -1,8 +1,11 @@
+import sys
+sys.path.append("..")
 import pandas as pd
 import numpy as np
-from utils.feature_extractor import fingerprint_features
 from sklearn.model_selection import train_test_split
 from rdkit.Chem import DataStructs
+
+from utils.feature_extractor import fingerprint_features
 
 def preprocessing_smiles(data_path):
     '''

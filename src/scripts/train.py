@@ -2,6 +2,8 @@
 import pickle
 import os
 import randomname
+import sys
+sys.path.append("..")
 
 # ML packages
 import tensorflow as tf
