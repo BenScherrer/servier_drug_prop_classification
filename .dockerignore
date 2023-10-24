@@ -1,0 +1,6 @@
+# .dockerignore
+src/data/
+src/models/
+src/templates/
+experiments/
+src/__pycache__/
