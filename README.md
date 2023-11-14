@@ -73,8 +73,8 @@ WIP
 6. Misc
 
 Vizualisation is key. Next steps for this project would be to implement visualisation tools through the Flask API that allows the user to :
-   - Visualize models that have already been create
-   - Handle the training datasets
+   - Visualize models that have already been created
+   - Handle the training datasets 
    - Select models to load and perform model evaluations or prediction
 
 

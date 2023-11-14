@@ -1,5 +1,5 @@
 # Public modules
-from flask import Flask, request
+from flask import Flask, request, json, render_template
 import os
 import sys
 
@@ -15,10 +15,27 @@ from scripts.evaluate import evaluate
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return '<p>Hello, World!</p>'
 
+def load_models():
+    with open('./data/models.json', 'r') as file:
+        models = json.load(file)
+    return models
+
+@app.route('/')
+def index():
+    models = load_models()
+    return render_template('index.html', models=models)
+
+@app.route('/model_info', methods=['POST'])
+def model_page():
+    models = load_models()
+    if request.method == 'POST':
+        selected_model_name = request.form['model_id']
+        selected_model = next((model for model in models if model['id'] == selected_model_name), None)
+        if selected_model:
+            return render_template('model_page.html', model=selected_model)
+        else:
+            return "Model not found"
 
 @app.route('/train', methods=['GET'])
 def api_train():
