@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train</title>
+</head>
+<body>
+    <h1>Train</h1>
+    <p> Enter your parameters </p>
+    <form action="/trigger_train" method="post">
+        <label for="data_path"> Select a CSV file path: </label>
+        <br>
+        <select name="data_path" id="data_path">
+            <option value=""> -- Please choose a path -- </option>
+            {% for path in data_path %}
+            <option value="{{ path }}">{{ path }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="method"> Select a method: </label>
+        <br>
+        <select name="method" id="method">
+            <option value=""> -- Please choose a ML method -- </option>
+            {% for method in methods %}
+            <option value="{{ method.label }}">{{ method.label }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <button type="submit" name="submit_training"> Start training </button>
+    </form>
+    <br>
+    <form action="/">
+        <button type="submit" name="home"> Home </button>
+    </form>
+</body>
+</html>

@@ -44,7 +44,7 @@ def preprocessing_smiles(data_path):
 
 def preprocessing_feature(data_path):
     '''
-        Transform a the string smiles of a csv dataset into a numpy array and split the dataset into training and testing datasets.
+        Transform the string smiles of a csv dataset into a numpy array and split the dataset into training and testing datasets.
     Args :
         - data_path : path leading to the data you want to preprocess and split
     Returns :

@@ -2,6 +2,7 @@
 import pickle
 import os
 import randomname
+import json
 import sys
 sys.path.append("..")
 
@@ -58,7 +59,10 @@ def train(data_path, method):
             pickle.dump(clf,f)
         print(f"------- Model saved in {folder_name}/MLP_model.pkl -------")
 
+# TODO : Add information about the model in models.json file with preprocessing_params, score... etc
 def save_model(folder_name, X_train, X_test, y_train, y_test):
+    if not os.path.exists("./models"):
+        os.mkdir("./models")
     if not os.path.exists(folder_name):
         os.mkdir(folder_name)
         print(f"Model folder created at {folder_name}")
@@ -71,3 +75,21 @@ def save_model(folder_name, X_train, X_test, y_train, y_test):
             pickle.dump(y_train, file)
         with open(os.path.join(folder_name, 'y_test.pkl'), 'wb') as file:
             pickle.dump(y_test, file)
+        # update model json
+        if os.path.exists('./data/models.json'):
+            with open('./data/models.json', 'r') as file:
+                    models = json.load(file)
+        else:
+            models = []
+        model_name = folder_name.split('/')[2]
+        new_model = {
+                        "name": model_name,
+                        "description": "TODO",
+                        "details": "TODO",
+                        "id": "TODO"
+                    }
+        models.append(new_model)
+        with open('./data/models.json', 'w') as file:
+            json.dump(models, file, indent=2)
+        
+    

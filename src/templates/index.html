@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning Menu</title>
+    <title>Servier: Home</title>
 </head>
 <body>
-    <h1>Machine Learning Menu</h1>
+    <h1>Home</h1>
+    <p> Available models : </p>
     <form action="/model_info" method="post">
         {% for model in models %}
             <button type="submit" name="model_id" value="{{ model.id }}">{{ model.name }}</button>
         {% endfor %}
+    </form>
+    <form action="/train">
+        <button type="submit"> Train you model </button>
     </form>
 </body>
 </html>
