@@ -9,9 +9,9 @@ project_dir = os.path.dirname(current_dir)
 sys.path.append(project_dir)
 
 # Private modules
-from scripts.train import train
-from scripts.evaluate import predict
-from scripts.evaluate import evaluate
+from src.train import train
+from src.predict import predict
+from src.evaluate import evaluate
 
 app = Flask(__name__)
 
@@ -66,7 +66,7 @@ def api_predict():
     model_folder = request.args.get('model_path')
     method = request.args.get('method')
     res = predict(model_folder, instance, method)
-    return f'Predict is {res}'
+    return render_template('predict_results.html', predict_result=res)
 
 # TODO : let's start with a simple confusion matrix
 @app.route('/evaluate')

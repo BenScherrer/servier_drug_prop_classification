@@ -1,5 +1,5 @@
 [
-    {"id": 1, "label": "Random Forest"},
+    {"id": 1, "label": "RandomForest"},
     {"id": 2, "label": "LSTM"},
     {"id": 3, "label": "MLP"}
   ]

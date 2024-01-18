@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
 
 # Private packages
-from scripts.preprocess import preprocessing_feature, preprocessing_smiles
+from src.preprocess import preprocessing_feature, preprocessing_smiles
 
 
 def train(data_path, method):

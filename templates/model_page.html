@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ model.name }}</title>
+</head>
+<body>
+    <h1>{{ model.name }} Details</h1>
+    <p>Description: {{ model.description }}</p>
+    <p>Details: {{ model.details }}</p>
+    <br>
+    <form action="/predict" method='get'>
+        <label for="smile">Smile to predict:</label>
+        <input type="text" id="smile" name="smile" placeholder="Enter a smile" required>
+        <button type="submit" name="predict"> Predict ! </button>
+    </form>
+    <br>
+    <br>
+    <form action="/evaluate" method='get'>
+        <label for="method">Evaluation method to use:</label>
+        <input type="text" id="method" name="method" placeholder="Enter an evaluation method" required>
+        <button type="submit" name="evaluate"> Evaluate ! </button>
+    </form>
+    <form action="/">
+        <button type="submit" name="home"> Home </button>
+    </form>
+</body>
+</html>
